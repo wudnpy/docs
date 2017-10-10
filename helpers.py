@@ -8,7 +8,7 @@ def value_not_none(method):
 		if value is None:
 			raise ValueError('\'None\' is not allowed for property value')
 			return method(self, value)
-	checked_method.__name__ = method__name__
+	checked_method.__name__ = method.__name__
 	return checked_method
 	
 def trace_value(loglevel = logging.DEBUG):
@@ -18,13 +18,13 @@ def trace_value(loglevel = logging.DEBUG):
 			old = getattr(self, p_name)
 			msg = ('Property \'{p_name}\' will be change' +
 			'from  \'{old}\' to \'{value}\'').format(**locals())  
-			logging.log(loglevel, ??)
+			logging.log(loglevel, msg)
 			return method(self, value)
 		traced_method.__name = method.__name__
 		return traced_method
 	return tracing_value
 	
-	debug_value = trace_value(logging.DEBUG)
-	info_value = trace_value(logging.INFO)
-	warning_value = trace_value(logging.WARNING)
+debug_value = trace_value(logging.DEBUG)
+info_value = trace_value(logging.INFO)
+warning_value = trace_value(logging.WARNING)
 		

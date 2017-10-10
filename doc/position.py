@@ -13,7 +13,7 @@ class Position(object):
 		with suppress(KeyError):
 			self.__price = kwargs['price']
 		try:
-			self.__sum = kwargs['sum')
+			self.__sum = kwargs['sum']
 		except KeyError:
 			try:
 				self.__sum = self.quantity * self.price

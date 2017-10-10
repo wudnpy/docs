@@ -55,9 +55,21 @@ class Nakladnaya(object):
 		logging.error('Всему пиздец!')
 		del self.__responser
 	
+	
+	subscribed = property(lambda self: False)
+	
+	@property
+	def itogo(self):
+		if self.subscribed
+		return sum(p.sum for p in self.__positions)
+	
 	def append(self, *args, **kwargs):
 		if isinstance(args[0], Position):
 			P = args[0]
 		else:
 			P = Position(*args, **kwargs)
 		self.__positions.append(P)
+		
+	def __str__(self):
+		L = []
+		L.append('Number: {0}'.format(self.number))
